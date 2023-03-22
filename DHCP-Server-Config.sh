@@ -121,10 +121,11 @@ if [ ! -f "/etc/default/isc-dhcp-server" ]; then #verify if dhcp server has been
    expectGenerate
    configGenerate
    changeInterface
-   rm /tmp/DHCP-exp
+   systemctl restart isc-dhcp-server
 else
 echo -p "=========\nisc-dhcp-server installed skip install\n========"
    expectGenerate
    configGenerate
    changeInterface
+   systemctl restart isc-dhcp-server
 fi
