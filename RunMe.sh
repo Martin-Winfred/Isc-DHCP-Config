@@ -13,7 +13,7 @@ Description=$(lsb_release -si)
 
 #get IscDhcpServer status
 IscStatus=$(systemctl is-active isc-dhcp-server)
-if [ "$IscStatus" = "activate" ]; then
+if [ "$IscStatus" = "active" ]; then
   IscStatus_color="\033[32m"  # Green
 else
   IscStatus_color="\033[31m"  # Red
