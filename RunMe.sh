@@ -13,7 +13,7 @@ Description=$(lsb_release -si)
 
 #get IscDhcpServer status
 IscStatus=$(systemctl is-active isc-dhcp-server)
-if [ "$IscStatus" = "activate" ]; then
+if [ "$IscStatus" = "active" ]; then
   IscStatus_color="\033[32m"  # Green
 else
   IscStatus_color="\033[31m"  # Red
@@ -114,7 +114,7 @@ function Menu(){
     echo -e "========SysInfo==========\n"
     echo -e "Description : \033[1;36m[$Description]\033[0m"
     echo -e "ISC-dhcp-server install status: ${IscStatus_color}[$IscStatus]\033[0m"
-    echo -e "isc-dhcp-server status: ${IscInstall_color}[$IscStatus]\033[0m"
+    echo -e "isc-dhcp-server status: ${IscInstall_color}[$InstallStatus]\033[0m"
     echo -e "\n=========================\n"
     echo "1) Install isc-dhcp-server"
     echo "2) Activate Service"
